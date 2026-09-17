@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>마지막 접속 — 연무동 기록실</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="outer-header">
+    <a class="game-title" href="#" id="home-logo"><span class="title-mark">↳</span> 마지막 접속 <span class="edition">A SEARCH MYSTERY</span></a>
+    <div class="outer-right"><span class="offline"><i></i> 오프라인 기록 열람</span><button class="quiet" id="help-open">조사 안내</button></div>
+  </header>
+
+  <main class="archive-window">
+    <div class="window-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><div class="address"><span aria-hidden="true">▣</span> archive://yeonmu.local / restored / 2008-07</div><span class="chrome-label">READ ONLY</span></div>
+    <header class="site-header">
+      <div class="site-brand"><div class="site-icon" aria-hidden="true">연<br>무</div><div><div class="site-name">연무마당<span>기록실</span></div><p>사라진 글은 있어도, 없었던 일은 없습니다.</p></div></div>
+      <div class="archive-stamp">RESTORED ARCHIVE<br><strong>2008. 07.</strong><span>사건 01 / 운영자 실종</span></div>
+    </header>
+    <div class="notice-strip"><span>복구 알림</span> 이 사이트는 보존된 기록입니다. 새 글이나 댓글을 작성할 수 없습니다.<span class="strip-date">마지막 원본 접속 · 07.19 00:22</span></div>
+
+    <div class="workspace">
+      <aside class="left-rail">
+        <div class="rail-label">기록 탐색 <span>01</span></div>
+        <nav aria-label="기록 분류">
+          <button class="nav-item active" data-view="home"><span>▤</span> 첫 화면 <b>04</b></button>
+          <button class="nav-item" data-view="found"><span>⌕</span> 발견한 기록 <b id="found-count">4</b></button>
+          <button class="nav-item" data-view="pinned"><span>◇</span> 증거함 <b id="pin-count">0</b></button>
+        </nav>
+        <div class="rail-section"><div class="rail-label">최근 검색</div><div id="recent-searches" class="recent-searches"><p class="muted">아직 검색한 단어가 없습니다.</p></div></div>
+        <div class="request-card"><div class="tiny-caps">CASE REQUEST</div><h3>언니의 마지막 글은<br>언니가 쓴 게 아니에요.</h3><p>의뢰인 윤서윤<br>대상: 운영자 ‘새벽지기’</p><button id="request-open">의뢰 메일 다시 읽기 ↗</button></div>
+        <div class="rail-bottom"><button id="hint-button">막혔을 때 도움받기 <span>?</span></button><button id="restart-button" class="subtle">처음부터 조사하기</button></div>
+      </aside>
+
+      <section class="center-panel" aria-label="기록 열람">
+        <div class="search-block"><div class="search-eyebrow">기억나는 단어 하나부터.</div><form id="search-form" role="search"><label class="sr-only" for="search-input">기록 검색</label><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" maxlength="80" autocomplete="off" placeholder="이름, 장소, 수상한 문장을 검색하세요" enterkeyhint="search"><button type="submit">검색 <span>↵</span></button></form><div class="search-under"><span>게시글 · 댓글 · 복구 기록 통합 검색</span><kbd>Ctrl K</kbd></div></div>
+        <div id="content" aria-live="polite"></div>
+      </section>
+
+      <aside class="right-rail" aria-label="수사 노트">
+        <div class="case-heading"><span class="tiny-caps">INVESTIGATION</span><span class="case-number">#001</span></div>
+        <h2>사라진 운영자</h2><p class="case-date">2008년 7월 19일, 새벽.</p>
+        <div class="progress-wrap"><div class="progress-meta"><span>읽은 기록</span><strong><span id="read-count">0</span> / 22</strong></div><div class="progress-track"><div id="progress-fill"></div></div></div>
+        <div class="questions"><div class="rail-label">밝혀야 할 것</div><p><span>01</span> 마지막 공지를 쓴 사람</p><p><span>02</span> 운영자가 연락을 끊은 이유</p><p><span>03</span> 사건 기록 원본의 행방</p></div>
+        <div class="notepad"><label for="notes">나의 메모 <span>✎</span></label><textarea id="notes" maxlength="6000" spellcheck="false" placeholder="연결되는 이름이나 날짜를 적어두세요.&#10;&#10;새벽지기 = 윤서진&#10;마지막 공지의 말투가 다르다."></textarea><div id="save-status">이 브라우저에 자동 저장</div></div>
+        <button id="report-open" class="report-button">사건 보고서 작성 <span>↗</span></button>
+        <p class="report-caption">결론에는 기록으로 된 근거가 필요합니다.</p>
+        <div class="pinned-preview"><div class="rail-label">최근 보관한 증거</div><div id="evidence-preview"><p class="muted">중요한 글을 읽고<br>‘증거 보관’을 눌러주세요.</p></div></div>
+      </aside>
+    </div>
+    <footer class="site-footer"><span>연무마당 · YEONMU COMMUNITY ARCHIVE</span><span id="footer-status">NETWORK DISCONNECTED / LOCAL COPY</span></footer>
+  </main>
+  <footer class="outer-footer"><span>읽고. 의심하고. 다시 검색하세요.</span><span>마지막 접속 · 독립 창작 미스터리 / 외부 API 사용 없음</span></footer>
+
+  <dialog id="mail-dialog" class="mail-dialog"><div class="dialog-top"><span>받은 편지함 / 1개의 의뢰</span><button class="dialog-close" data-close="mail-dialog" aria-label="메일 닫기">×</button></div><div class="mail-inner"><div class="mail-eyebrow">YOU HAVE ONE UNREAD MESSAGE</div><h1>언니의 마지막 글은<br>언니가 쓴 게 아니에요.</h1><div class="mail-from"><span class="avatar">윤</span><div><strong>윤서윤</strong><small>받는 사람: 기록 조사 담당자</small></div><span class="mail-tag">조사 의뢰</span></div><div id="mail-body"></div><div class="mail-attachment"><span>▤</span><div><strong>yeonmu_archive_200807</strong><small>커뮤니티 복구본 · 로컬 열람</small></div><span>22 RECORDS</span></div><button id="begin-button" class="primary-button">복구본 열기 <span>→</span></button><p class="mail-footnote">약 15–20분 · 자동 저장 · 이어폰 불필요</p></div></dialog>
+  <dialog id="help-dialog" class="small-dialog"><button class="dialog-close" data-close="help-dialog" aria-label="안내 닫기">×</button><span class="tiny-caps">HOW TO INVESTIGATE</span><h2>검색창이 수사 도구입니다.</h2><ol><li>첫 화면의 글과 댓글을 읽습니다.</li><li>눈에 걸리는 이름·물건·장소를 직접 검색합니다.</li><li>중요한 기록은 증거함에 보관합니다.</li><li>결론과 근거를 골라 사건 보고서를 제출합니다.</li></ol><p>기록을 읽으면 연결된 자료의 접근 정보가 복구됩니다. 안 나오던 검색어도 다시 찾아보세요. 첨부파일도 화면 안에서 읽을 수 있습니다.</p><p class="muted">실제 인터넷에 접속하지 않습니다. 모든 인물·기관·사건은 허구입니다. 침수 사고와 실종에 관한 표현이 있습니다.</p><button class="primary-button" data-close="help-dialog">알겠습니다</button></dialog>
+  <dialog id="hint-dialog" class="small-dialog"><button class="dialog-close" data-close="hint-dialog" aria-label="도움 닫기">×</button><span class="tiny-caps">A SMALL NUDGE</span><h2>기록 사이에 길이 있습니다.</h2><p id="hint-text"></p><button class="primary-button" data-close="hint-dialog">다시 찾아보기</button></dialog>
+  <dialog id="restart-dialog" class="small-dialog"><span class="tiny-caps">NEW INVESTIGATION</span><h2>처음부터 조사할까요?</h2><p>이 사건의 검색 기록, 증거함, 메모가 지워집니다.</p><div class="button-row"><button data-close="restart-dialog">이어서 하기</button><button id="restart-confirm" class="danger-button">기록 지우고 시작</button></div></dialog>
+  <dialog id="report-dialog" class="report-dialog"><div class="dialog-top"><span>사건 01 / 최종 조사 보고서</span><button class="dialog-close" data-close="report-dialog" aria-label="보고서 닫기">×</button></div><div class="report-inner"><span class="tiny-caps">EVIDENCE BEFORE ASSUMPTION</span><h2>어떤 일이 있었습니까?</h2><p>각 결론과, 그 결론을 직접 뒷받침하는 기록을 함께 선택하세요.</p><form id="report-form"><div id="report-questions"></div><div id="report-feedback" role="status"></div><button class="primary-button" type="submit">보고서 제출 <span>→</span></button></form></div></dialog>
+  <dialog id="ending-dialog" class="ending-dialog"><div class="ending-inner"><span class="ending-seal">기록 확인</span><div class="tiny-caps">CASE 001 — RESOLVED</div><h1>접속은 끊겼지만,<br>기록은 남았습니다.</h1><div class="ending-letter"><p>“언니에게 전화가 왔어요.</p><p>미안하다는 말을 너무 많이 해서, 이제 됐다고 했어요. 살아 있다는 걸 알았으니까요.</p><p>마지막 공지만 읽었으면 저는 계속 언니가 우리를 버렸다고 생각했을 거예요. 지워진 글까지 읽어줘서 고마워요.”</p><p class="letter-sign">— 윤서윤</p></div><p class="ending-truth">박도현은 시설 점검의 문제를 숨기려고 운영자 명의로 공지를 쓰고 관련 글을 지웠습니다. 윤서진은 제보자를 보호하며 취재를 이어갔고, 원본은 은하인쇄에 남겨두었습니다.</p><div id="ending-stats"></div><button id="ending-continue" class="primary-button">기록실로 돌아가기 <span>→</span></button><p class="mail-footnote">마지막 접속 · 사건 01 끝</p></div></dialog>
+  <div id="toast" role="status"></div>
+  <script src="game-data.js"></script><script src="game-core.js"></script><script src="app.js"></script>
+</body>
+</html>
